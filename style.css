@@ -1,9 +1,12 @@
+/* style.css */
+
+/* Reset default margin and padding for all elements */
 * {
     margin: 0;
     padding: 0;
-
 }
 
+/* General styles */
 .hero {
     width: 100%;
     height: 100vh;
@@ -12,13 +15,20 @@
 }
 
 .hero .carousel {
-     width: 300px;
-     margin: 100px auto 0;
-     overflow: visible;
+    width: 300px;
+    margin: 100px auto 0;
+    overflow: visible;
 }
 
 .carousel img {
-    -webkit-box-reflect: below 20px linear-gradient(rgba(255,255,255,0.1),rgba(255,255,255,0.3));
+    -webkit-box-reflect: below 20px linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3));
     border: 5px solid rgb(255, 3, 3);
     border-radius: 1.5rem;
 }
+
+/* Styles for the contact section */
+.contact-section {
+    margin-top: 30px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f8f8

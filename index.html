@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,37 +8,96 @@
     <title>My Art Gallery</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="jquery.flipster.min.css">
+    <style>
+        /* Add your custom CSS styling here */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .contact-section {
+            padding: 20px;
+            background-color: #918bae;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-size: 34px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .contact-section p {
+            font-size: 24px;
+            margin: 5px 0;
+            color: #666;
+        }
+
+        .contact-section a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .hero {
+            background: #0a1128;
+            overflow: hidden;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .carousel {
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .carousel img {
+            border: 5px solid #f8f8f8;
+            border-radius: 8px;
+            margin: 5px;
+        }
+    </style>
 </head>
+
 <body>
+
+    <div class="contact-section">
+        <h2>Murtuza's Art Gallery</h2>
+        <p>Artist: Murtuza Sarwat Taqi</p>
+        <p>Email: your.email@example.com</p>
+        <p>Instagram: <a href="https://www.instagram.com/murtuza_taqi/">@murtuza_taqi</a></p>
+    </div>
 
     <div class="hero">
         <div class="carousel">
-            <ul>
-                <li><img src="images/img1.png" alt=""></li>
-                <li><img src="images/img2.png" alt=""></li>
-                <li><img src="images/img3.png" alt=""></li>
-                <li><img src="images/img4.png" alt=""></li>
-                <li><img src="images/img5.png" alt=""></li>
-                <li><img src="images/img6.png" alt=""></li>
-                <li><img src="images/img7.png" alt=""></li>
-                <li><img src="images/img8.png" alt=""></li>
-                <li><img src="images/img9.png" alt=""></li>
-                <li><img src="images/img10.png" alt=""></li>
-                <!-- <li><img src="images/img11.png" alt=""></li> -->
+            <ul id="imageList">
+                <!-- JavaScript will populate the list here -->
             </ul>
         </div>
     </div>
-    
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="jquery.flipster.min.js"></script>
 
     <script>
-        $('.carousel').flipster({
-            style:'carousel',
-            spacing: -0.3,
+        $(document).ready(function () {
+            var imageListHtml = "";
+            var imageFolder = "images/"; // Assuming the images folder is named "images/"
 
+            for (var i = 1; i < 21; i++) {
+                imageListHtml += '<li><img src="' + imageFolder + "img" + i.toString() + ".png" + '" alt=""></li>';
+            }
+
+            $('#imageList').html(imageListHtml);
+
+            $('.carousel').flipster({
+                style: 'carousel',
+                spacing: -0.3,
+            });
         });
     </script>
-    
+
 </body>
+
 </html>
